@@ -24,8 +24,8 @@ const createPostSchema = z.object({
 });
 
 const updatePostSchema = z.object({
-  title: z.string(),
-  description: z.string(),
+  title: z.string().optional(),
+  description: z.string().optional(),
 });
 
 type CreatePost = z.infer<typeof createPostSchema>;
@@ -65,10 +65,13 @@ export class PostController {
   async createPost(@Body() { title, description }: CreatePost) {
     return this.postService.createPost({ title, description });
   }
-  @UsePipes(new ZodValidationPipe(updatePostSchema))
   @Put(':postId')
-  async updatePost(@Param('postId') postId: string, @Body() post: UpdatePost) {
-    return this.postService.updatePost(postId, post);
+  async updatePost(
+    @Param('postId') postId: string,
+    @Body(new ZodValidationPipe(updatePostSchema))
+    { title, description }: UpdatePost,
+  ) {
+    return this.postService.updatePost(postId, { title, description });
   }
   @Delete(':postId')
   async deletePost(@Param('postId') postId: string) {
