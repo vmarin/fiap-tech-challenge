@@ -4,18 +4,18 @@ import mongoose, { HydratedDocument } from 'mongoose';
 
 export type PostsDocument = HydratedDocument<Post>;
 
-@Schema()
+@Schema({ timestamps: { createdAt: 'created_at', updatedAt: 'modified_at' } })
 export class Post implements IPost {
   @Prop({ type: mongoose.Schema.Types.ObjectId })
   id?: string;
-  @Prop()
+  @Prop({ required: true })
   title: string;
-  @Prop()
+  @Prop({ required: true })
   description: string;
   @Prop()
-  created_at: Date;
+  created_at?: Date;
   @Prop()
-  modified_at: Date;
+  modified_at?: Date;
 }
 
 export const PostsSchema = SchemaFactory.createForClass(Post);
