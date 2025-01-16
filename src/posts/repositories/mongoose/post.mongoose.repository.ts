@@ -26,11 +26,12 @@ export class PostMongooseRepository implements PostRepository {
     await createPost.save();
   }
   async updatePost(postId: string, post: Partial<IPost>): Promise<void> {
+    const updateData = Object.fromEntries(
+      Object.entries(post).filter(([, value]) => value !== undefined),
+    );
+
     await this.postModel
-      .updateOne(
-        { _id: postId },
-        { title: post.title, description: post.description },
-      )
+      .updateOne({ _id: postId }, { $set: updateData })
       .exec();
   }
   async deletePost(postId: string): Promise<void> {
