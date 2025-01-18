@@ -1,7 +1,7 @@
 # Manual de Uso da API Escola Desafio
 
 ## Introdução
-Este manual oferece uma visão geral de como usar os endpoints disponíveis, incluindo detalhes de autenticação, exemplos de requisições e respostas, e tratamento de erros.
+Este manual oferece uma visão geral de como usar os endpoints disponíveis, incluindo detalhes de autenticação, exemplos de requisições e respostas, e tratamento de erros..
 
 ---
 
