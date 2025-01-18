@@ -30,12 +30,14 @@ export class PostService {
   async updatePost(postId: string, post: Partial<IPost>) {
     const updatedPost = await this.postRepository.updatePost(postId, post);
 
+    if (!updatedPost) throw new NotFoundException('Post não encontrado');
     return updatedPost;
   }
 
   async deletePost(postId: string) {
-    const post = await this.postRepository.deletePost(postId);
+    const deletedPost = await this.postRepository.deletePost(postId);
 
-    return post;
+    if (!deletedPost) throw new NotFoundException('Post não encontrado');
+    return { message: `Post com id ${postId} deletado com sucesso.` };
   }
 }

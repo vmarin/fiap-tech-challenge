@@ -43,7 +43,7 @@ const SwaggerCreatePostSchema = {
 };
 
 @UseInterceptors(LoggingInterceptor)
-@Controller('post')
+@Controller('posts')
 export class PostController {
   constructor(private readonly postService: PostService) {}
   // @UseGuards(AuthGuard)

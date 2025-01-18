@@ -22,9 +22,13 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Manual de Uso da API
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Introdução
+A API tech-challenge permite que desenvolvedores acessem e gerenciem recursos relacionados a [descrição do
+serviço]. Este manual oferece uma visão geral de como usar os endpoints disponíveis, incluindo detalhes
+de autenticação, exemplos de requisições e respostas, e tratamento de erros.
+
 
 ## Project setup
 
