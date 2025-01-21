@@ -19,7 +19,7 @@ Este manual oferece uma visão geral de como usar os endpoints disponíveis, inc
   http://localhost:3333/api
   ```
 
-### Requisitos
+### Requisitos.
 
 - Conexão HTTPS.
 
