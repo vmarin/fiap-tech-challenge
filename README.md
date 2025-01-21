@@ -8,7 +8,7 @@ Este manual oferece uma visão geral de como usar os endpoints disponíveis, inc
 
 ## 1. Configuração Inicial
 
-### Base URL
+### Base URL.
 
 - **Ambiente de testes:**
   ```
